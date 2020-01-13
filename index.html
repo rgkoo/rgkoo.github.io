@@ -9,6 +9,7 @@
     <!-- <script type="text/javascript" charset="utf-8" src="//aeis.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script> -->
     <script>
         function callFlutter(message) {
+        	window.console && console.log(JSON.stringify(message))
            Flutter.postMessage(JSON.stringify(message));
         }
     </script>
