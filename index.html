@@ -3,20 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <title>验证</title>
-    <!-- 国内使用 -->
-    <script type="text/javascript" charset="utf-8" src="//g.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script>
-    <!-- 若您的主要用户来源于海外，请替换使用下面的js资源 -->
-    <!-- <script type="text/javascript" charset="utf-8" src="//aeis.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script> -->
-    <script>
-        function callFlutter(message) {
-        	window.console && console.log(JSON.stringify(message))
-           Flutter.postMessage(JSON.stringify(message));
-        }
-    </script>
+    <style>
+    	body {
+    		background: #232E33;
+    	}
+    </style>
 </head>
 <body>
 <div id="your-dom-id" class="nc-container"></div> <!--No-Captcha渲染的位置，其中 class 中必须包含 nc-container-->
+<!-- 国内使用 -->
+<script type="text/javascript" charset="utf-8" src="//g.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script>
+<!-- 若您的主要用户来源于海外，请替换使用下面的js资源 -->
+<!-- <script type="text/javascript" charset="utf-8" src="//aeis.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script> -->
+<script>
+    function callFlutter(message) {
+       Flutter.postMessage(JSON.stringify(message));
+    }
+</script>
 <script type="text/javascript">
+
+window.onload = () => {
+	window.console && console.log("onload")
+}
         var nc_token = ["FFFF0N000000000089D1", (new Date()).getTime(), Math.random()].join(':');
         var NC_Opt =
         {
@@ -65,6 +73,8 @@
             _error300: "哎呀，出错了，点击<a href=\"javascript:__nc.reset()\">刷新</a>再来一次",
             _errorNetwork: "网络不给力，请<a href=\"javascript:__nc.reset()\">点击刷新</a>",
         })
+
+
         </script>
 </body>
 </html>
